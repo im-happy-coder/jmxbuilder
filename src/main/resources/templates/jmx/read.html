@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading Excel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <tbody class="thead-dark">
+            <tr>
+                <th scope="col">URL</th>
+            </tr>
+            <tr th:each="data : ${datas}" >
+                <td th:text="${data.url}"></td>
+            </tr>
+<!--                <tr>
+                    <th scope="col">디바이스</th>
+                    <th scope="col">모듈구분</th>
+                    <th scope="col">신규여부</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">설명</th>
+                    <th scope="col">비고</th>
+
+                </tr>
+                <tr th:each="data : ${datas}" >
+                    <td th:text="${data.device}"></td>
+                    <td th:text="${data.module}"></td>
+                    <td th:text="${data.update}"></td>
+                    <td th:text="${data.url}"></td>
+                    <td th:text="${data.description}"></td>
+                    <td th:text="${data.etc}"></td>
+                </tr>-->
+                <tr>
+                    <td colspan="6">
+                        <a th:href="@{/view}"><input type="button" class="btn btn-primary" value="Convert Excel to JMX" /></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
